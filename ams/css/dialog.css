@@ -1,0 +1,45 @@
+.dialog-holder{
+	display: none;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+.ui-dialog-titlebar{
+    display: none;
+}
+
+.dialog-form{
+  /*padding-left: 10px;*/
+  display: inline-block;
+  width: 100%;
+  /*background-color: #DCDCDC;*/
+}
+
+.dialog-btn{
+    color: #fff;
+    font-weight: bold;
+}
+
+.dialog-btn:hover,
+.dialog-btn:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ui-dialog .ui-dialog-content {
+	position: relative;
+	border: 0;
+	padding: 0 !important;
+	background: none;
+	overflow: auto;
+}
+
+.ui-widget-content {
+	border: 1px solid #dddddd;
+	background: #ffffff;
+	color: #333333;
+}
+
