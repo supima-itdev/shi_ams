@@ -1,7 +1,7 @@
 $(function(){
 	
-var role = $('#txtRole');
-var role_val;
+	var role = $('#txtRole');
+	var role_val;
 
 	function Validate(){
 		

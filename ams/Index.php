@@ -10,7 +10,6 @@
   
   // header('Location:login.php');
 
-  phpinfo();
 ?>
 
 <!DOCTYPE html>

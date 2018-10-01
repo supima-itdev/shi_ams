@@ -65,11 +65,20 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
  
+      			
+
 	<div class="container">
+		
+		<div class="row">
+			<div class="twelve column" style="margin-top: 15%">
+				<h4>Menus and Modules</h4>
+				<br/>
+			</div>
+		</div>
+
     	<div class="row">
-      		<div class="tweleve column" style="margin-top: 15%">
-      			<h4>Menus and Modules</h4>
-		        <br/>
+
+      		<div class="six columns" >
 				<div class="table-wrapper">
 					<div class="table-content" style="height: 340px !important">
 						<table>
@@ -91,8 +100,10 @@
 				</div> <!-- table-wrapper  -->
 
 				<span id="add-new-menu" class="dialog-btn">Add Menu</span>
+      		</div> <!-- column -->
 
-				<div class="table-wrapper">
+      		<div class="six columns" >
+      			<div class="table-wrapper">
 					<div class="table-content" style="height: 340px !important">
 						<table>
 							<thead>
@@ -107,7 +118,7 @@
 										<div class="col-header">Modules Path</div>
 									</th>
 								</tr>
-							</thead>s
+							</thead>
 							<tbody>
 								<?php echo $oMenusModules->View_Modules(); ?>
 							</tbody>  
@@ -116,10 +127,8 @@
 				</div> <!-- table-wrapper  -->
 				
 				<span id="add-new-module" class="dialog-btn">Add Module</span>
+      		</div> <!-- column -->
 
-				<br/>
-				
-      		</div>
 		</div> <!-- row -->
 	</div> <!-- container -->
 
