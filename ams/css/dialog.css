@@ -24,7 +24,7 @@
 
 .dialog-btn:hover,
 .dialog-btn:focus {
-    color: red;
+    color: #30E741;
     text-decoration: none;
     cursor: pointer;
 }

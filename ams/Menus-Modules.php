@@ -79,27 +79,31 @@
     	<div class="row">
 
       		<div class="six columns" >
+
 				<div class="table-wrapper">
 					<div class="table-content" style="height: 340px !important">
+
 						<table>
 							<thead>
 								<tr>
 									<th>
-										<div class="col-header">Menu ID</div>
+										<div class="col-header">ID</div>
 									</th>
 									<th>
 										<div class="col-header">Menus</div>
 									</th>
 								</tr>
-							</thead>s
+							</thead>
 							<tbody>
 								<?php echo $oMenusModules->View_Menus(); ?>
 							</tbody>  
 						</table>
-					</div>
+
+					</div> <!-- table-content -->
 				</div> <!-- table-wrapper  -->
 
 				<span id="add-new-menu" class="dialog-btn">Add Menu</span>
+
       		</div> <!-- column -->
 
       		<div class="six columns" >
@@ -109,13 +113,13 @@
 							<thead>
 								<tr>
 									<th>
-										<div class="col-header">Module ID</div>
+										<div class="col-header">ID</div>
 									</th>
 									<th>
 										<div class="col-header">Modules</div>
 									</th>
 									<th>
-										<div class="col-header">Modules Path</div>
+										<div class="col-header">Path</div>
 									</th>
 								</tr>
 							</thead>
@@ -127,6 +131,7 @@
 				</div> <!-- table-wrapper  -->
 				
 				<span id="add-new-module" class="dialog-btn">Add Module</span>
+
       		</div> <!-- column -->
 
 		</div> <!-- row -->
@@ -176,6 +181,12 @@
 		        <div class="div-input">
 		          <input type="text" id="txtModulePath">           
 		        </div>
+		        <div class="div-label">
+		          Menu
+		        </div>
+		         <div class="div-input">
+        			<?php $oMenusModules->element_name = "ddlMenu"; echo $oMenusModules->List_Menus();?>  
+    			</div>
 		        <div class="div-button">
 		          <input type="button" class="btnSubmit" id="btnSubmit_Module" value="Submit" style="color: #000;">
 		          <input type="button" class="btnClose" id="btnClose_Module" value="Close" style="color: #000;">

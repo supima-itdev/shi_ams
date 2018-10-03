@@ -18,11 +18,12 @@
 	}
 	else if($connObj->{"Action"} == "AddModules"){
 
-		$module = $connObj->{"Modules"};
+		$module 	= $connObj->{"Modules"};
 		$modulepath = $connObj->{"ModulesPath"};
+		$menu 		= $connObj->{"Menu"};
 
 		
-		echo $oMenusModules->AddModules($module,$modulepath);		
+		echo $oMenusModules->AddModules($module,$modulepath,$menu);		
 	}
 	
 

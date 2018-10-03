@@ -3,10 +3,12 @@ $(function(){
 	var menu = $('#txtMenu');
 	var modules = $('#txtModule');
 	var modulepath = $('#txtModulePath');
+	var menu = $('#ddlMenu');
 
 	var menu_val;
 	var module_val;
 	var modulepath_val;
+	var menu_val;
 
 	function Validate_Menu(){
 		
@@ -25,12 +27,13 @@ $(function(){
 		
 		module_val = Input_Validation(modules,'Enter Module');	
 		modulepath_val = Input_Validation(modulepath,'Enter Module');
+		menu_val = Input_Validation(menu,'Select Menu');
 
 		Set_Focus(modules);	
 		Set_Focus(modulepath);
-		
+		Set_Focus(menu);
 
-		if (module_val && modulepath_val){	
+		if (module_val && modulepath_val && menu_val){	
 			return true;	
 		}else{	
 			return false;	
@@ -95,9 +98,12 @@ $(function(){
 
 			if(stat_flag == true){
 
+				// console.log(module_val+', '+modulepath_val+', '+menu_val);
+
 				var param = {"Action":"AddModules",
 							 "Modules":module_val,
-							 "ModulesPath":modulepath_val
+							 "ModulesPath":modulepath_val,
+							 "Menu":menu_val
 							};
 
 				param = JSON.stringify(param);
@@ -112,6 +118,7 @@ $(function(){
 		            	if(result == 1){
 		            		modules.val('');
 		            		modulepath.val('');
+		            		menu.val('');
 		            	} 
 		            },
 		            error: function (result){
@@ -119,6 +126,10 @@ $(function(){
 		            }
 
 				});//ajax
+
+
+
+
 			} //if
 	}); //btnSubmit_Module
 
