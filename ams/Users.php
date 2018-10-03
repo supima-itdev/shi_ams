@@ -44,9 +44,11 @@
   	<link rel="stylesheet" href="css/jquery-ui.css">
   	<link rel="stylesheet" href="css/table.css">
 	<link rel="stylesheet" href="css/dialog.css">
+	<link rel="stylesheet" href="css/font.css">
 
   	<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
   	<script type="text/javascript" src="js/jquery-ui.js"></script>
+  	<script type="text/javascript" src="js/jquery.md5.js"></script>
   	<script type="text/javascript" src="js/validation.js"></script>
  	<script type="text/javascript" src="js/users.js"></script>
 

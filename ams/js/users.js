@@ -9,6 +9,9 @@ $(function(){
 	var firstname_val;
 	var lastname_val;
 
+	var label_username_val;
+	var label_password_val;
+
 	var stat_flag;
 
 
@@ -84,12 +87,16 @@ $(function(){
 
 		if(stat_flag == true){
 
+			label_username_val = label_username.text();
+			label_password_val = $.md5(label_password.text());
+
 			var param = {
 					"Action":"AddUsers",
 					"FistName":firstname_val,
 					"LastName":lastname_val,
-					"Username":label_username.text(),
-					"Password":label_password.text()};
+					"Username":label_username_val,
+					"Password":label_password_val
+				};
 
 			param = JSON.stringify(param);
 
@@ -98,7 +105,7 @@ $(function(){
 	            url: "UsersAction.php",
 	            data: {data:param} ,
 	            success: function (result){
-	            	// console.log("success: "+ result);
+	            	console.log("success: "+ result);
 
 	            	if(result == 1){
 	            		Clear();
