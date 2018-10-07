@@ -108,7 +108,6 @@
 
 
 		function List_Menus(){
-
 		    $sql = "SELECT menuid, menu FROM ams.menus";
 		    $stmt = $this->_dsn->prepare($sql);
 		    $stmt->execute();

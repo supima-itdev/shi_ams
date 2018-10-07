@@ -323,7 +323,7 @@ label > .label-body {
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-ul {
+/*ul {
   list-style: circle inside; }
 ol {
   list-style: decimal inside; }
@@ -338,7 +338,7 @@ ol ul {
   font-size: 90%; }
 li {
   margin-bottom: 1rem; }
-
+*/
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -369,6 +369,7 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0; }*/
+
 
 
 /* Spacing

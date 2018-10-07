@@ -108,37 +108,46 @@
 
 		        <br/>
 
-				<div class="div-label">
-		          Firstname
-		        </div>
-		        <div class="div-input">
-		          <input type="text" id="txtFirstname"  size="35">           
-		        </div>
+		        <div style='display: table; width: 100%; table-layout: fixed;'>
 
-		        <div class="div-label">
-		          Lastname
-		        </div>
-		        <div class="div-input">
-		          <input type="text" id="txtLastname"  size="35">           
-		        </div>
+		            <div style='display: table-cell;'>
 
-		        
-		        <div>
-			        <div class="div-label" >
-			          <span style="display: inline-block;">Username</span>&nbsp;
-			          <span id="lblUsername" style="display: inline-block; color: #0FA900;"></span>
-			        </div>
-			        
-			        <div class="div-label" style="display: inline-block;">
-			          <span style="display: inline-block;">Password</span>&nbsp;
-			          <span id="lblPassword" style="display: inline-block; color: #0FA900;"></span>
-			        </div>
-		        </div>
+			            <div class="div-label">
+				          Firstname
+				        </div>
+				        <div class="div-input">
+				          <input type="text" id="txtFirstname"  size="25">           
+				        </div>
+
+						<div class="div-label">
+				          Lastname
+				        </div>
+				        <div class="div-input">
+				          <input type="text" id="txtLastname"  size="25">           
+				        </div>
+
+				        <div>
+					        <div class="div-label" >
+					          <span style="display: inline-block;">Username</span>&nbsp;
+					          <span id="lblUsername" style="display: inline-block; color: #0FA900;"></span>
+					        </div>
+					        
+					        <div class="div-label" style="display: inline-block;">
+					          <span style="display: inline-block;">Password</span>&nbsp;
+					          <span id="lblPassword" style="display: inline-block; color: #0FA900;"></span>
+					        </div>
+				        </div>
+
+						<br/>
+				        	<input type="button" class="btnGenerate" id="btnGenerate" value="Generate" style="color: #000;">
+
+		            </div> <!-- col -->
+
+              	</div> <!-- row -->
 
 		        <br/>
 
 		        <div class="div-button" >
-		        	<input type="button" class="btnGenerate" id="btnGenerate" value="Generate" style="color: #000;">
 		         	<input type="button" class="btnSubmit" id="btnSubmit" value="Submit" style="color: #000;">
 		        	<input type="button" class="btnClose" id="btnClose" value="Close" style="color: #000;">
 		        </div

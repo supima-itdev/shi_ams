@@ -184,7 +184,7 @@
 		        <div class="div-label">
 		          Menu
 		        </div>
-		         <div class="div-input">
+		        <div class="div-input">
         			<?php $oMenusModules->element_name = "ddlMenu"; echo $oMenusModules->List_Menus();?>  
     			</div>
 		        <div class="div-button">

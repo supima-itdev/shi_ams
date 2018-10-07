@@ -8,9 +8,7 @@
 			$this->_dsn = $_dsn;
 		} //__construct
 
-
 		function View_Users(){
-
 
 			$sql = "SELECT username, CONCAT  (firstname, ', ', lastname) AS name FROM ams.users";
 			$stmt = $this->_dsn->prepare($sql);

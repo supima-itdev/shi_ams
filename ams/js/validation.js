@@ -2,13 +2,13 @@
 function Input_Validation(varObject,infoMsg){
 
 	if(isNaN(varObject.val()) == true){
+		return varObject.val();
+	}else{
 		if(varObject.val() == ''){
 			varObject.attr('placeholder',infoMsg).addClass('validate-error');
 		}else{
 			return varObject.val();
 		}
-	}else{
-		return varObject.val();
 	}
 
 } //Input_Validation
