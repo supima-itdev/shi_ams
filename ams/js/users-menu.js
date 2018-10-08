@@ -2,28 +2,36 @@ $(function(){
 
 	var param;
 	var usersname = $('#txtUsersname');
+	var lblusersname = $('.users_name');
+	var ddlMenu = $('#ddlMenu');
+	var ddlModule = $('#ddlModule');
+	var lblusersname_val; 
+	var ddlMenu_val;
+	var ddlModule_val;
+	
+	
 
-	// function Validate(){
+
+
+	function Validate(){
 		
-	// 	usersname_val = Input_Validation(usersname,'Enter Firstname');	
+		ddlMenu_val = Input_Validation(ddlMenu,'Enter Firstname');	
+		ddlModule_val = Input_Validation(ddlModule,'Enter Firstname');	
 
-	// 	Set_Focus(usersname);	
+		Set_Focus(ddlMenu);
+		Set_Focus(ddlModule);	
 
-	// 	if (usersname_val){	
-	// 		return true;	
-	// 	}else{	
-	// 		return false;	
-	// 	}	
-	// } //Validate
+		if (ddlMenu_val && ddlModule_val){	
+			return true;	
+		}else{	
+			return false;	
+		}	
+	} //Validate
 
 
 
 	$('#btnFind').click(function(e){
 		e.preventDefault();	
-		
-		// stat_flag = Validate();
-		// if(stat_flag == true){
-		// } //if
 		
 			param = {
 				"Action":"GetUserMenus",
@@ -54,17 +62,47 @@ $(function(){
 		$('#dialog-users-menus').dialog('close');
 	});
 
-
-	$('#add-new-user').click(function(e){
+	$('#btnSubmit').click(function(e){
 		e.preventDefault();
+
+		stat_flag = Validate();
+
+		if(stat_flag == true){
+
+			lblusersname_val = lblusersname.text();
+
+			param = {
+				"Action":"AddUserMenus",
+				"Username":lblusersname_val,
+				"Menu":ddlMenu_val,
+				"Module":ddlModule_val
+			};
+
+			param = JSON.stringify(param);
+
+			$.ajax({
+				type: "POST",
+		        url: "Users-MenusAction.php",
+		        data: {data:param} ,
+		        success: function (result){
+		        	console.log("success: "+ result);
+		        	
+		        },
+		        error: function (result){
+		            // console.log("error: "+ result);	
+		        }
+			});//ajax
+
+		} //if
+	});	
+
+	
+	$(document).on('click','.btnOpen',function(e){
+		e.preventDefault();
+		var users_name = $(this).closest('tr').find('td:eq(0)').text();
+		$('.users_name').html('');
+		$('.users_name').append(users_name);
 		$('#dialog-users-menus').dialog('open');
-	});
-
-	$('.btnOpen').click(function(e){
-		e.preventDefault();
-		// $('#dialog-users-menus').dialog('open');
-
-		alert('');
 	});
 
 	$( "#dialog-users-menus" ).dialog({
@@ -79,5 +117,7 @@ $(function(){
 	      location.reload();
 	 	}
 	}); //dialog-users
+
+
 
 });

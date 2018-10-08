@@ -15,6 +15,13 @@
 		$usersname = $connObj->{"Usersname"};
 		
 		echo $oUsersMenus->GetUserMenus($usersname);		
+
+	}else if($connObj->{"Action"} == "AddUserMenus"){
+		$username = $connObj->{"Username"};
+		$menu = $connObj->{"Menu"};
+		$module = $connObj->{"Module"};
+
+		echo $oUsersMenus->AddUserMenus($username,$menu,$module);		
 	}
 	
 

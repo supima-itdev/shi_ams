@@ -11,7 +11,7 @@
   // }else{
   //   header('Location:login.php');
   // }
-  
+
 ?>
 
 <!DOCTYPE html>
@@ -52,33 +52,24 @@
  	<script type="text/javascript" src="js/users-menu.js"></script>
 
 
-
 </head>
-
-
-
 
 <!-- HTML BODY
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <body>
 
 	<div class="container">
-    	<div class="row">
-      		<div class="tweleve column" style="margin-top: 15%">
+		<div class="row">
+	  		<div class="tweleve column" style="margin-top: 15%">
 
 	            <h4>Users Menus</h4>
 
 		        <br/>
 
-		        <input type="text" id="txtUsersname" size="25">&nbsp;&nbsp;
-		        <input type="button" class="btnFind" id="btnFind" value="Find" >
+		        <input type="text" name="txtUsersname" id="txtUsersname" size="25">&nbsp;&nbsp;
+		        <input type="submit" class="btnFind" id="btnFind" value="Find" >
 
 				<br/>
-
-
-
-
-
 
 		        <div class="table-wrapper">
 					<div class="table-content" style="height: 340px !important">
@@ -94,22 +85,17 @@
 									<th>
 										<div class="col-header">Menu</div>
 									</th>
-
 								</tr>
 							</thead>
 							<tbody id="list_usersnames">
-								
-								<?php //$oUsersMenus->GetUserMenus($usersname);?>  
 							</tbody>  
 						</table>
 					</div>
 				</div> <!-- table-wrapper  -->
 
-      		</div> <!-- column -->
-    	</div> <!-- row -->
-  	</div> <!-- container -->
-
-  	
+	      	</div> <!-- column -->
+	    </div> <!-- row -->
+	</div> <!-- container -->
 
   	<div class="dialog-holder">
 		<div id="dialog-users-menus">
@@ -118,6 +104,8 @@
 				<h4>Users Menu</h4>
 
 		        <br/>
+
+		        Username:&nbsp;&nbsp;<span class="users_name"></span>
 
 		        <div style='display: table; width: 100%; table-layout: fixed;'>
 
@@ -136,10 +124,9 @@
         					<?php $oUsersMenus->SetElementName("ddlModule"); echo $oUsersMenus->List_Modules();?>  
     					</div>
 
-	                </div><!-- col --> 
+	                </div> <!-- col --> 
 		            
-
-              	</div> 
+              	</div> <!-- row --> 
               	
 
 		        <br/>
@@ -152,14 +139,8 @@
 			</div> <!-- dialog-form -->
 		</div> <!-- dialog-users-menus -->
 	</div> <!-- dialog-holder -->
-	
-
 
 </body>
-
-
-
-
 
 </html>
 

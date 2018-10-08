@@ -11,7 +11,6 @@
 			$this->_dsn = $_dsn;
 		} //__construct
 
-
 		function SetElementName($elementname){
 			$this-> elementname = $elementname;
 		}
@@ -20,19 +19,18 @@
 			return $this -> elementname;
 		}
 
-
-		function GetUserMenus($usersname){
+		function GetUserMenus($data){
 
 			$sql = "SELECT 
-						username,
+						u.username,
 						CONCAT  (firstname, ', ', lastname) AS name,
 						menu	
 					FROM ams.users u
-					LEFT JOIN ams.users_menus um ON um.userid = u.userid
+					LEFT JOIN ams.users_menus um ON um.username = u.username
 					LEFT JOIN ams.menus m ON m.menuid = um.menuid
 					WHERE u.username LIKE '%' || :usersname || '%'";
 			$stmt = $this->_dsn->prepare($sql);
-			$param = array(":usersname" => $usersname);
+			$param = array(":usersname" => $data);
 			$stmt->execute($param);
 
 			$row = $stmt->fetch();
@@ -45,11 +43,19 @@
 					$result.= "<td width='20%'>".$row['username']."</td>";
 					$result.= "<td width='30%'>".$row['name']."</td>";
 					$result.= "<td width='40%'>".$row['menu']."</td>";
+					$result.= "<td width='10%'>
+									<div class='action-icon'>
+                                  		<img src='images/printer_16x16.png' class='black'>
+                                		<span class='btnOpen'><img src='images/printer_red_16x16.png' class='red'></span>
+                                	</div>
+                                </td>";
+
 					$result.= "</tr>";
+
+
 				} while ($row = $stmt->fetch()); 	
 			}
 	    	return $result;
-
 		} //GetUserMenus		
 
 		function List_Menus(){
@@ -84,6 +90,43 @@
 		    return $result;
 		}//List_Measures
 
+		function AddUserMenus($username,$menu,$module){
+
+			try{
+
+				$sql = " SELECT ams.func_ur_addusers_menus(:username,:menuid,:moduleid)";
+
+				$stmt = $this->_dsn->prepare($sql);
+
+				$param = array(":username" 		=> $username,
+							   ":menuid" 		=> $menu,
+							   ":moduleid" 		=> $module);
+
+				$result = $stmt->execute($param);
+
+				$errorInfo = $stmt->errorInfo();
+
+				if(isset($errorInfo[2])){
+					$error = $errorInfo[2];
+				}
+
+			}catch(PDOException $e){
+				echo $e->getMessage();
+			}
+
+			return $result;
+		} //AddUsersMenu
+
+
 	} //UsersMenus
+
+
+
+		// function Check_Input($data) {
+		//   $data = trim($data);
+		//   $data = stripslashes($data);
+		//   $data = htmlspecialchars($data);
+		//   return $data;
+		// }
 
 ?>
