@@ -45,6 +45,9 @@
   	<link rel="stylesheet" href="css/table.css">
 	<link rel="stylesheet" href="css/dialog.css">
 	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/header.css">
+  	<link rel="stylesheet" href="css/footer.css">
+
 
   	<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
   	<script type="text/javascript" src="js/jquery-ui.js"></script>
@@ -60,7 +63,11 @@
 
 	<div class="container">
 		<div class="row">
-	  		<div class="tweleve column" style="margin-top: 15%">
+	  		<div class="tweleve column" > <!-- style="margin-top: 15%" -->
+
+	  			<header>
+	  				<?php include "../ams/header.php";?>
+	  			</header>
 
 	            <h4>Users Menus</h4>
 
@@ -92,6 +99,12 @@
 						</table>
 					</div>
 				</div> <!-- table-wrapper  -->
+
+				<br/>
+
+				<footer>
+					<?php include "../ams/footer.php";?>
+				</footer>
 
 	      	</div> <!-- column -->
 	    </div> <!-- row -->
@@ -139,6 +152,8 @@
 			</div> <!-- dialog-form -->
 		</div> <!-- dialog-users-menus -->
 	</div> <!-- dialog-holder -->
+
+	
 
 </body>
 

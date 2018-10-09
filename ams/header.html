@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>AMS</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/font.css">
+
+  <style>
+
+
+    nav ul {
+      list-style: none;
+      /*background-color: #B8B8B8;*/
+      /*text-align: center;*/
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li {
+      border-bottom: none;
+      display: inline-block;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      display: block;
+      padding: 10px 10px 10px 10px;
+      /*border-bottom: 1px solid #888;*/
+      transition: .3s background-color;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color:#A9A9A9;
+      color: #fff;
+      /*border: 1px solid #A9A9A9;*/
+      /*border-radius: 20px;*/
+    }
+
+    nav a.active {
+      font-weight: 900;
+      cursor: default;
+    }
+
+    /* Sub Menus */
+    nav li ul {
+      position: absolute;
+      display: none;
+      width: inherit;
+    }
+
+    nav li:hover ul {
+      display: block;
+    }
+
+    nav li ul li {
+      display: block;
+      position: relative;
+      z-index: 10;
+      background-color: #DCDCDC;
+    }
+
+    nav li ul li a{
+      padding: 5px 5px;
+      /*background-color: #F0F0F0;*/
+    }
+
+  
+    .header-left{
+      width: 70%;
+      float: left;
+    }
+
+    .header-right{
+      width: 30%;
+      float: right;
+      text-align:right;
+    }  
+   
+    .header-content{
+      width: auto;
+      display: inline-block;
+    } 
+
+    .num-marker{
+      border-radius: 50px; 
+      background: #ff0000; 
+      color: white; 
+      padding: 1px; 
+      text-align: center; 
+      width: 20px; 
+      height: 20px;
+      position: relative;
+    }
+
+    .black{
+      display: block;
+    }
+
+    .red {
+      display: none;
+    }
+
+    .notification-holder{
+      display: inline-block;
+    }
+
+    .notification-holder:hover .black {
+      display: none;
+    }
+
+    .notification-holder:hover .red {
+      display: block;
+      cursor: pointer;
+    }
+
+    footer{
+      text-align: center;
+      padding: 10px 0px 10px 0px;
+      background-color: #DCDCDC;
+      color: #000;
+    }
+
+  </style>
+
+</head>
+<body>
+
+      <div class="container">
+        <div class="row">
+          <div class="tweleve column">
+            <header>
+              
+              <div style='padding: 250px 0 10px 0;'>
+
+                <div style= 'display: table; width: 100%; table-layout: fixed;'>
+
+                  <!-- <div style='display: table-cell;'>
+                    <img src='images/logo-title.png' alt='TFILogo' style='padding-left:10px;'>
+                  </div> --> 
+                  <!-- col -->
+
+                  <div style='display: table-cell; width: 25%;'>
+
+                    <!-- <div class='notification-holder'>";
+
+                      <div class='num-marker' style='display: inline-block; float: right; position: absolute; margin-left: 20px;' >
+                        Verification
+                      </div>
+
+                      <div class='num-marker' style='display: inline-block; float: right; position: absolute; margin-left: 20px;'>
+                        For Approval
+                      </div> -->
+                  
+                      <!-- <div style='display: inline-block;'>
+                        <img src='images/doc_black_32x32.png' alt='TFILogo' class='black'>
+                        <span class='ro-link'>
+                          <img src='images/doc_red_32x32.png' alt='TFILogo'  class='red'>
+                        </span>
+                      </div> --> 
+
+                      <!-- inline-block -->
+
+                    <!-- </div>  -->
+                    <!-- notification-holder -->
+
+                  </div> <!-- col -->
+
+                </div> <!-- row -->
+
+                <div style='display: table; width: 100%; table-layout: fixed; background-color: #DCDCDC;'>
+                  <div style='display: table-cell; width: 50%;'>
+                    <nav>
+                      <ul>
+                        <li>
+                          <a href='./index.php'>Home</a>
+                        </li>
+
+                        <li><a href='' >Items</a>
+                          <ul>
+                            <li>
+                              <a href= >ItemA</a>
+                            </li>
+                          </ul>
+                        </li>
+
+                      </ul>
+                    </nav>
+                  </div><!-- col -->
+
+                  <div style='display: table-cell; text-align:right; color: #000; font-weight: bold;'>
+                    Welcome User
+                  </div> <!-- col -->
+
+                  <div style='display: table-cell; width:8%; text-align:right; padding-right:10px; color: #000; '> 
+                    Logout
+                  </div><!-- col -->
+                  
+                </div> <!-- row -->
+                
+              </div>
+
+
+
+
+            </header>
+            <h4>Welcome</h4>
+            <footer>
+              Copyright &copy; Supima Holdings Inc. 2018
+            </footer>
+          </div> <!-- column -->
+        </div> <!-- row -->
+      </div> <!-- container -->  
+
+</body>
+</html>

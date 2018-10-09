@@ -94,13 +94,12 @@
 
 			try{
 
-				$sql = " SELECT ams.func_ur_addusers_menus(:username,:menuid,:moduleid)";
+				$sql = " SELECT ams.func_ur_addusers_menus(:username,:menuid)";
 
 				$stmt = $this->_dsn->prepare($sql);
 
 				$param = array(":username" 		=> $username,
-							   ":menuid" 		=> $menu,
-							   ":moduleid" 		=> $module);
+							   ":menuid" 		=> $menu);
 
 				$result = $stmt->execute($param);
 
