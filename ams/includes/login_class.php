@@ -16,10 +16,10 @@
 
 			try{
 
-				$sql = " SELECT CONCAT  (firstname, ', ', lastname) AS name, COUNT(username) AS ctr 
+				$sql = " SELECT username, CONCAT(firstname, ', ', lastname) AS name, COUNT(username) AS ctr 
 							FROM ams.users 
 							WHERE username = :username AND password = :password 
-							GROUP BY lastname,firstname";
+							GROUP BY lastname,firstname,username";
 				$stmt = $this->_dsn->prepare($sql);
 				$param = array(":username" => $username,":password" => $password);
 				$stmt->execute($param);
@@ -30,7 +30,8 @@
 
 					$result = $row['ctr'];
 
-					$_SESSION['user'] = $row['name'];
+					$_SESSION['user'] = $row['username'];
+					$_SESSION['fullname'] = $row['name'];
 				}
 				
 

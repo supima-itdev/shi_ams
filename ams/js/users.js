@@ -1,6 +1,5 @@
 $(function(){
 	
-
 	var firstname = $('#txtFirstname');
 	var lastname = $('#txtLastname');
 	var label_username = $('#lblUsername');
@@ -36,7 +35,6 @@ $(function(){
 	    label_username.text('');
 		label_password.text('');
 	} //Clear
-
 
 	$('#btnGenerate').click(function(e){
 		e.preventDefault();	
@@ -79,6 +77,14 @@ $(function(){
 			alert('error');
 		}
 	}); //btnGenerate
+
+	$(document).on('click','.btnEdit',function(e){
+		e.preventDefault();
+		var users_name = $(this).closest('tr').find('td:eq(0)').text();
+		// $('.users_name').html('');
+		// $('.users_name').append(users_name);
+		alert(users_name);
+	}); //btnEdit
 
 	$('#btnSubmit').click(function(e){
 		e.preventDefault();
@@ -134,7 +140,7 @@ $(function(){
 		dialogClass: 'no-close',
 		modal: true,
 		autoOpen:false,
-		height: 400,
+		height: 460,
 	  	width: 600,
 	  	draggable:false, 
 	  	resizable:false,
@@ -142,6 +148,27 @@ $(function(){
 	      location.reload();
 	 	}
 	}); //dialog-users
+
+	$( "#dialog-notifier" ).dialog({
+		dialogClass: 'no-close',
+		modal: true,
+		autoOpen:false,
+		height: 120,
+      	width: 300,
+      	draggable:false, 
+      	resizable:false,
+		buttons: {
+            Yes: function () {
+                
+            },
+            No: function () {                                                                 
+            	$(this).dialog("close");
+            }
+        },
+		close: function(event, ui) {
+          location.reload();
+     	}
+    }); //notifier
 
 
 

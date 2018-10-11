@@ -21,8 +21,14 @@
 			if($row){
 				do { 
 					$result.= "<tr>";
-					$result.= "<td>".$row['username']."</td>";
-					$result.= "<td>".$row['name']."</td>";
+					$result.= "<td width='20%'>".$row['username']."</td>";
+					$result.= "<td width='70%'>".$row['name']."</td>";
+					$result.= "<td width='10%'>
+									<div class='action-icon'>
+                                  		<img src='images/edit_16x16.png' class='black'>
+                                		<span class='btnEdit'><img src='images/edit_red_16x16.png' class='red'></span>
+                                	</div>
+                                </td>";
 					$result.= "</tr>";
 				} while ($row = $stmt->fetch()); 	
 			}

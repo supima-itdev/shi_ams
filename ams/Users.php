@@ -40,11 +40,11 @@
 
   	<link rel="stylesheet" href="css/normalize.css">
   	<link rel="stylesheet" href="css/skeleton.css">
-  	<link rel="stylesheet" href="css/custom.css">
   	<link rel="stylesheet" href="css/jquery-ui.css">
   	<link rel="stylesheet" href="css/table.css">
 	<link rel="stylesheet" href="css/dialog.css">
 	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/custom.css">
 
   	<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
   	<script type="text/javascript" src="js/jquery-ui.js"></script>
@@ -108,25 +108,24 @@
 
 		        <br/>
 
-		        <div style='display: table; width: 100%; table-layout: fixed;'>
-
-		            <div style='display: table-cell;'>
-
-			            <div class="div-label">
-				          Firstname
-				        </div>
-				        <div class="div-input">
-				          <input type="text" id="txtFirstname"  size="25">           
-				        </div>
+		        
 
 						<div class="div-label">
-				          Lastname
-				        </div>
-				        <div class="div-input">
-				          <input type="text" id="txtLastname"  size="25">           
-				        </div>
+							Firstname
+						</div>
+						<div class="div-input">
+							<input type="text" id="txtFirstname"  size="25">           
+						</div>		            		
 
-				        <div>
+
+						<div class="div-label">
+					    	Lastname
+					    </div>
+					    <div class="div-input">
+					    	<input type="text" id="txtLastname"  size="25">           
+					    </div>
+
+					    <div>
 					        <div class="div-label" >
 					          <span style="display: inline-block;">Username</span>&nbsp;
 					          <span id="lblUsername" style="display: inline-block; color: #0FA900;"></span>
@@ -139,29 +138,19 @@
 				        </div>
 
 						<br/>
-				        	<input type="button" class="btnGenerate" id="btnGenerate" value="Generate" style="color: #000;">
-
-		            </div> <!-- col -->
-
-              	</div> <!-- row -->
-
+				        <input type="button" class="btnGenerate" id="btnGenerate" value="Generate" style="color: #000;">
 		        <br/>
 
 		        <div class="div-button" >
 		         	<input type="button" class="btnSubmit" id="btnSubmit" value="Submit" style="color: #000;">
 		        	<input type="button" class="btnClose" id="btnClose" value="Close" style="color: #000;">
-		        </div
+		        </div>
 
 			</div> <!-- dialog-form -->
 		</div> <!-- roles-dialog -->
 	</div> <!-- dialog-holder -->
 
-
 </body>
-
-
-
-
 
 </html>
 

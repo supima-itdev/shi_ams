@@ -49,7 +49,7 @@
           <input type="password" id="txtPassword"  size="35">           
         </div>
         
-        <div class="div-button" >
+        <div>
           <input type="button" class="btnSubmit" id="btnSubmit" value="Submit">
         </div>
         

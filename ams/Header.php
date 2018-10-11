@@ -4,7 +4,7 @@
 
 	if(isset($_SESSION['user']) && !empty($_SESSION['user'])) {    
     	$user = $_SESSION['user'];
-    	// $role = $_SESSION['userrole'];
+    	$fullname = $_SESSION['fullname'];
 	}else{
     	header('Location:login.php');
   	}
@@ -17,18 +17,10 @@
             </div>
         </div>";
 
-    echo "
-    	<div style='display: table; width: 100%; table-layout: fixed;'>
-            <div style='display: table-cell; text-align:right;'>
-            	Welcome <b><a href=''>User</a></b>
-            </div> <!-- col -->
-            <div style='display: table-cell; width:8%; text-align:right; padding-right:5px;'> 
-            	<a href='./logout.php' ><b>Logout</b></a>         
-            </div><!-- col -->
-        </div>";   
+    
               
     echo "
-    	<div style='display: table; width: 100%; table-layout: fixed; background-color: #C0C0C0;'>
+    	<div style='display: table; width: 100%; table-layout: fixed; background-color: #C0C0C0;' > <!--  -->  
         	<div style='display: table-cell; width: 50%;'>
             	<nav>
                     <ul>
@@ -37,10 +29,10 @@
 		    			$sql_menu = "SELECT 
 							DISTINCT(me.menuid) menuid,
 							me.menu 
-						FROM ams.users_menus um
+						FROM ams.menus_config mc
 						LEFT JOIN ams.menus me 
-							ON me.menuid = um.menuid 
-						WHERE um.username = :username";
+							ON me.menuid = mc.menuid 
+						WHERE mc.username = :username";
 
 						$stmt_menu = $dbConn->prepare($sql_menu);
 						$paramVal = array(":username"	=> $user);
@@ -55,10 +47,10 @@
 								$sql_module = "	SELECT 
 									module,
 									modulepath
-								FROM ams.users_menus um
+								FROM ams.menus_config mc
 								LEFT JOIN ams.modules mo 
-									ON mo.menuid = um.menuid 
-								WHERE um.username =:username AND mo.menuid = :menuid";
+									ON mo.moduleid = mc.moduleid 
+								WHERE mc.username =:username AND mc.menuid = :menuid";
 
 								$stmt_module = $dbConn->prepare($sql_module);
 								$paramVal = array(":username"	=> $user,":menuid"	=> $MenuArr['menuid']);
@@ -71,11 +63,21 @@
 	echo "					</ul>";	
 						}//Menu
 
-echo "					</li>
+	echo "				</li>
 					</ul>
 				</nav>
 			</div> <!-- col -->
 		</div> <!-- row -->";
+
+	echo "
+    	<div style='display: table; width: 100%; table-layout: fixed;'>
+            <div style='display: table-cell; text-align:right;'>
+            	Welcome <b>$fullname</b>
+            </div> <!-- col -->
+            <div style='display: table-cell; width:8%; text-align:right; padding-right:5px;'> 
+            	<a href='./logout.php' ><b>Logout</b></a>         
+            </div><!-- col -->
+        </div>";   
 
 
 

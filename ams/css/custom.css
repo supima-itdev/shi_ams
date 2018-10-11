@@ -12,3 +12,15 @@ h1, h2, h3, h4, h5, h6{
 .validate-error{
   border: 2px solid #ff0000 !important;
 }
+
+.div-button{
+	position: absolute;
+	right: 0;    
+}
+
+
+.div-label,
+.div-input{
+	width: 50%;
+	display: inline-block;
+}

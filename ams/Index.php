@@ -3,11 +3,11 @@
   ob_start();
   session_start();
 
-  if(isset($_SESSION['user']) && !empty($_SESSION['user'])) {    
-    $user = $_SESSION['user'];
-  }else{
-    header('Location:login.php');
-  }
+  // if(isset($_SESSION['fullname']) && !empty($_SESSION['fullname'])) {    
+  //   $fullname = $_SESSION['fullname'];
+  // }else{
+  //   header('Location:login.php');
+  // }
   
 ?>
 
@@ -24,20 +24,32 @@
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+
 
 </head>
 <body>
 
       <div class="container">
         <div class="row">
-          <div class="tweleve column" style="margin-top: 15%">
-            <h4>Welcome <?php echo $user?></h4>
+          <div class="tweleve column">
+            <div class="wrapper">
+              <header>
+                <?php include_once "header.php";?>
+              </header>
+              <article>
+              </article>
+              <footer>
+                <?php include_once "footer.php";?>
+              </footer>
+            </div> <!-- wrapper -->
           </div> <!-- column -->
         </div> <!-- row -->
       </div> <!-- container -->  

@@ -3,12 +3,10 @@ $(function(){
 	var menu = $('#txtMenu');
 	var modules = $('#txtModule');
 	var modulepath = $('#txtModulePath');
-	var ddl_menu = $('#ddlMenu');
 
 	var menu_val;
 	var module_val;
 	var modulepath_val;
-	var ddl_menu_val;
 
 	function Validate_Menu(){
 		
@@ -27,13 +25,11 @@ $(function(){
 		
 		module_val = Input_Validation(modules,'Enter Module');	
 		modulepath_val = Input_Validation(modulepath,'Enter Module');
-		ddl_menu_val = Input_Validation(ddl_menu,'Select Menu');
 
 		Set_Focus(modules);	
 		Set_Focus(modulepath);
-		Set_Focus(ddl_menu);
 
-		if (module_val && modulepath_val && ddl_menu_val){	
+		if (module_val && modulepath_val){	
 			return true;	
 		}else{	
 			return false;	
@@ -64,7 +60,7 @@ $(function(){
 
 				$.ajax({
 					type: "POST",
-		            url: "Menus-ModulesAction.php",
+		            url: "MenusModulesAction.php",
 		            data: {data:param} ,
 		            success: function (result){
 		            	// console.log("success: "+ result);
@@ -107,15 +103,14 @@ $(function(){
 
 				var param = {"Action":"AddModules",
 							 "Modules":module_val,
-							 "ModulesPath":modulepath_val,
-							 "Menu":ddl_menu_val
+							 "ModulesPath":modulepath_val
 							};
 
 				param = JSON.stringify(param);
 
 				$.ajax({
 					type: "POST",
-		            url: "Menus-ModulesAction.php",
+		            url: "MenusModulesAction.php",
 		            data: {data:param} ,
 		            success: function (result){
 		            	// console.log("success: "+ result);
@@ -123,8 +118,9 @@ $(function(){
 		            	if(result == 1){
 		            		modules.val('');
 		            		modulepath.val('');
-		            		ddl_menu.val('');
 		            	} 
+
+		            	$('#dialog-modules').dialog('close');
 		            },
 		            error: function (result){
 		                // console.log("error: "+ result);	
