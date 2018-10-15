@@ -6,19 +6,19 @@
 
 	$connObj = json_decode($_POST["data"]);
 
-	if($connObj->{"Action"} == "ResetPassword"){
+	if($connObj->{"Action"} == "ChangePassword"){
 
 		$newpassword = $connObj->{"NewPassword"};
 		$user = $connObj->{"Username"};
 		
-		ResetPassword($dbConn,$newpassword,$user);		
+		ChangePassword($dbConn,$newpassword,$user);		
 	}
 
 
-	function ResetPassword($dbConn,$newpassword,$user){
+	function ChangePassword($dbConn,$newpassword,$user){
 		try{
 
-				$sql = " UPDATE ams.users SET password = :newpassword WHERE username = :user ";
+				$sql = " UPDATE ams.users SET password = :newpassword, password_reset = false  WHERE username = :user ";
 
 				$stmt = $dbConn->prepare($sql);
 

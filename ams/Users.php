@@ -147,6 +147,14 @@
 		        </div>
 
 			</div> <!-- dialog-form -->
+		</div> <!-- dialog-users -->
+	</div> <!-- dialog-holder -->
+
+	<div class="dialog-holder">
+		<div id="dialog-notifier">
+			<div class="dialog-form">
+				Do you want to continue YES/NO?
+			</div> <!-- dialog-form -->
 		</div> <!-- roles-dialog -->
 	</div> <!-- dialog-holder -->
 

@@ -29,6 +29,12 @@
 
 		echo $oUsers->AddUsers($firstname,$lastname,$username,$password);			
 	}
+	else if($connObj->{"Action"} == "ResetPassword"){
+		
+		$username = $connObj->{"Username"};
+		$newpassword = $connObj->{"NewPassword"};
 
+		echo $oUsers->ResetPassword($username,$newpassword);	
+	} 
 
 ?>

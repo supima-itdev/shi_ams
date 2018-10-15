@@ -16,10 +16,13 @@
 
 			try{
 
-				$sql = " SELECT username, CONCAT(firstname, ', ', lastname) AS name, COUNT(username) AS ctr 
+				$sql = " SELECT username, 
+							CONCAT(firstname, ', ', lastname) AS name, 
+							COUNT(username) AS ctr,
+							password_reset
 							FROM ams.users 
 							WHERE username = :username AND password = :password 
-							GROUP BY lastname,firstname,username";
+							GROUP BY lastname,firstname,username,password_reset";
 				$stmt = $this->_dsn->prepare($sql);
 				$param = array(":username" => $username,":password" => $password);
 				$stmt->execute($param);
@@ -28,7 +31,11 @@
 
 				while($row = $stmt->fetch()){
 
-					$result = $row['ctr'];
+					$ctr = $row['ctr'];
+
+					$password_stat = ($row['password_reset'] == true ? 1 : 0);
+
+					$result = $ctr.$password_stat;
 
 					$_SESSION['user'] = $row['username'];
 					$_SESSION['fullname'] = $row['name'];

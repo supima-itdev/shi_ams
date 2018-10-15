@@ -50,10 +50,14 @@ $(function(){
 	        url: "LoginAction.php",
 	        data: {data:param} ,
 	        success: function (result){
-	        	console.log("success: "+ result);	
+	        	// console.log("success: "+ result);	
 
-	        	if(result == 1){
+	        	if(result == 10){
 	        		window.location.href="index.php";	
+	        	}else if(result == 11){
+	        		window.location.href="changepassword.php";	
+	        	}else{
+	        		$('#err-msg').append('Username or Password Mismatch!');
 	        	}
 				
 	        },

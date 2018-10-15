@@ -1,11 +1,14 @@
 $(function(){
 	
 	var newpassword = $('#txtNewPassword');
+	
 	var newpassword_val;
+	
 
 	function Validate(){
 		
 		newpassword_val = Input_Validation(newpassword,'Enter New Password');
+		newpassword_val = $.md5(newpassword_val);
 
 		Set_Focus(newpassword);	
 
@@ -17,11 +20,16 @@ $(function(){
 	} //Validate
 
 
-	function ResetPassword(){
+	function ChangePassword(){
+
+		stat_flag = Validate();
+
+		if(stat_flag == true){
 
 			var user = $('#hiduser').val();
+
 			var param = {
-					"Action":"ResetPassword",
+					"Action":"ChangePassword",
 					"NewPassword":newpassword_val,
 					"Username":user
 				};
@@ -33,14 +41,18 @@ $(function(){
 	            url: "ChangePasswordAction.php",
 	            data: {data:param} ,
 	            success: function (result){
-	            	console.log("success: "+ result);	
+	            	// console.log("success: "+ result);	
+	            	$('#dialog-notifier').dialog('close');
 	            },
 	            error: function (result){
 	                console.log("error: "+ result);	
 	            }
 
 			});//ajax
-	}
+			
+		} //if
+
+	} //ResetPassword
 
 
 
@@ -48,14 +60,10 @@ $(function(){
 
 	$('#btnSubmit').click(function(e){
 		e.preventDefault();
-
-		stat_flag = Validate();
-
-		if(stat_flag == true){
-			$('#dialog-notifier').dialog('open');
-		}
-
+		$('#dialog-notifier').dialog('open');
 	});
+
+
 
 	$( "#dialog-notifier" ).dialog({
 		dialogClass: 'no-close',
@@ -67,7 +75,7 @@ $(function(){
       	resizable:false,
 		buttons: {
             Yes: function () {
-                
+                ChangePassword();
             },
             No: function () {                                                                 
             	$(this).dialog("close");

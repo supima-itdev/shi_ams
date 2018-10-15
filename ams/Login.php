@@ -52,6 +52,8 @@
         <div>
           <input type="button" class="btnSubmit" id="btnSubmit" value="Submit">
         </div>
+
+        <span id="err-msg"></span>
         
 
       </div> <!-- column -->

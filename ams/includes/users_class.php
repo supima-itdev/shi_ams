@@ -87,6 +87,33 @@
 			return $result;
 		} //AddUsers
 
+		function ResetPassword($username,$newpassword){
+
+			try{
+
+				$sql = " UPDATE ams.users SET password = :newpassword, password_reset = true WHERE username = :username ";
+				
+				$stmt = $this->_dsn->prepare($sql);
+
+				$param = array(":username" 			=> $username,
+							   ":newpassword" 		=> $newpassword
+							   );
+
+				$result = $stmt->execute($param);
+
+				$errorInfo = $stmt->errorInfo();
+
+				if(isset($errorInfo[2])){
+					$error = $errorInfo[2];
+				}
+
+			}catch(PDOException $e){
+				echo $e->getMessage();
+			}
+
+			return $result;
+		} //AddUsers
+
 	} //Users
 
 ?>

@@ -68,7 +68,7 @@
 
 				<div class="wrapper">
 					<header>
-						<?php //include_once "header.php";?>
+						<?php include_once "header.php";?>
 					</header>
 					<article>
 						<h4>Change Password</h4>

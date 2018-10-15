@@ -13,6 +13,9 @@ $(function(){
 
 	var stat_flag;
 
+	var users_name;
+	var new_password;
+
 
 	function Validate(){
 		
@@ -35,6 +38,35 @@ $(function(){
 	    label_username.text('');
 		label_password.text('');
 	} //Clear
+
+	function ResetPassword(){
+
+		var param = {
+					"Action":"ResetPassword",
+					"Username":users_name,
+					"NewPassword":new_password
+			};
+
+		param = JSON.stringify(param);
+
+		$.ajax({
+			type: "POST",
+	        url: "UsersAction.php",
+	        data: {data:param} ,
+	        success: function (result){
+	        	// console.log("success: "+ result);
+
+	        	if(result == 1){
+	        		$('#dialog-notifier').dialog('close');
+	        	}
+	        },
+	        error: function (result){
+	            // console.log("error: "+ result);	
+	        }
+
+		});//ajax
+
+	} //ResetPassword
 
 	$('#btnGenerate').click(function(e){
 		e.preventDefault();	
@@ -80,11 +112,14 @@ $(function(){
 
 	$(document).on('click','.btnEdit',function(e){
 		e.preventDefault();
-		var users_name = $(this).closest('tr').find('td:eq(0)').text();
-		// $('.users_name').html('');
-		// $('.users_name').append(users_name);
-		alert(users_name);
+
+		users_name  = $(this).closest('tr').find('td:eq(0)').text();
+		new_password =  $.md5(users_name);
+
+		$('#dialog-notifier').dialog('open');
+
 	}); //btnEdit
+
 
 	$('#btnSubmit').click(function(e){
 		e.preventDefault();
@@ -123,7 +158,7 @@ $(function(){
 
 			});//ajax
 		} //if
-	}); //btnSubmit
+	}); //btnSubmit0
 
 	$('#add-new-user').click(function(e){
 		e.preventDefault();	
@@ -159,7 +194,7 @@ $(function(){
       	resizable:false,
 		buttons: {
             Yes: function () {
-                
+				ResetPassword();
             },
             No: function () {                                                                 
             	$(this).dialog("close");
