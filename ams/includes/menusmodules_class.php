@@ -77,18 +77,17 @@
 		} //View_Menu
 
 
-		function AddModules($module,$modulepath){
-
-			// $result = $module.$modulepath.$menu;
+		function AddModules($module,$modulepath,$menu){
 
 			try{
 
-				$sql = "INSERT INTO ams.modules(module,modulepath) VALUES(:module,:modulepath)";
+				$sql = "INSERT INTO ams.modules(module,modulepath,menuid) VALUES(:module,:modulepath,:menu)";
 
 				$stmt = $this->_dsn->prepare($sql);
 
 				$param = array(":module" 		=> $module,
-							   ":modulepath" 	=> $modulepath);
+							   ":modulepath" 	=> $modulepath,
+							   ":menu" 			=> $menu);
 
 				$result = $stmt->execute($param);
 
@@ -106,6 +105,21 @@
 		} //AddModules
 
 
+		function List_Menus(){
+		    $sql = "SELECT menuid, menu FROM ams.menus";
+		    $stmt = $this->_dsn->prepare($sql);
+		    $stmt->execute();
+		    
+		    $result = "";
+
+		    $result .= "<select id='".$this->element_name."'>";
+		    $result .= "<option value=></option>";
+		    while($row = $stmt->fetch()){
+		      $result .="<option value=".$row['menuid'].">".$row['menu']."</option>";
+		    }
+		    $result .= "</select>";
+		    return $result;
+		}//List_Measures
 
 
 	} //MenusModules

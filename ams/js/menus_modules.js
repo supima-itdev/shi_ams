@@ -3,10 +3,14 @@ $(function(){
 	var menu = $('#txtMenu');
 	var modules = $('#txtModule');
 	var modulepath = $('#txtModulePath');
+	var ddl_menu = $('#ddlMenu');
+	
 
 	var menu_val;
 	var module_val;
 	var modulepath_val;
+	var ddl_menu_val;
+
 
 	function Validate_Menu(){
 		
@@ -23,13 +27,15 @@ $(function(){
 
 	function Validate_Module(){
 		
-		module_val = Input_Validation(modules,'Enter Module');	
-		modulepath_val = Input_Validation(modulepath,'Enter Module');
+		module_val = 		Input_Validation(modules,'');	
+		modulepath_val = 	Input_Validation(modulepath,'');
+		ddl_menu_val = 		Input_Validation(ddl_menu,'');
 
 		Set_Focus(modules);	
 		Set_Focus(modulepath);
+		Set_Focus(ddl_menu);
 
-		if (module_val && modulepath_val){	
+		if (module_val && modulepath_val && ddl_menu_val){	
 			return true;	
 		}else{	
 			return false;	
@@ -103,7 +109,8 @@ $(function(){
 
 				var param = {"Action":"AddModules",
 							 "Modules":module_val,
-							 "ModulesPath":modulepath_val
+							 "ModulesPath":modulepath_val,
+							 "Menu":ddl_menu_val
 							};
 
 				param = JSON.stringify(param);
@@ -113,7 +120,7 @@ $(function(){
 		            url: "MenusModulesAction.php",
 		            data: {data:param} ,
 		            success: function (result){
-		            	// console.log("success: "+ result);
+		            	console.log("success: "+ result);
 
 		            	if(result == 1){
 		            		modules.val('');

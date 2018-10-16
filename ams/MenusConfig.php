@@ -1,16 +1,10 @@
 <?php
-  // ob_start();
-  // session_start();
+  ob_start();
+  session_start();
 
   require "../ams/includes/menusconfig_class.php";
   include "../ams/includes/dbconfig.php";
   $oMenuConfig = new MenuConfig($dbConn);
-
-  // if(isset($_SESSION['user']) && !empty($_SESSION['user'])) {    
-  //   $user = $_SESSION['user'];
-  // }else{
-  //   header('Location:login.php');
-  // }
 
 ?>
 
@@ -66,10 +60,10 @@
 	  		<div class="tweleve column" > <!-- style="margin-top: 15%" -->
 	  			<div class="wrapper">
 					<header>
-						<?php //include_once "header.php";?>
+						<?php include_once "header.php";?>
 					</header>
 					<article>
-						<h4>Users Menus</h4>
+						<h4>Users Menu Setup</h4>
 
 				        <br/>
 
@@ -113,7 +107,7 @@
 		<div id="dialog-users-menus">
 			<div class="dialog-form">
 				
-				<h4>Users Menu</h4>
+				<h4>Users Menu Setup</h4>
 
 		        <br/>
 

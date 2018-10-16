@@ -43,6 +43,7 @@ $(function(){
 	            success: function (result){
 	            	// console.log("success: "+ result);	
 	            	$('#dialog-notifier').dialog('close');
+	            	window.location.href="index.php";	
 	            },
 	            error: function (result){
 	                console.log("error: "+ result);	

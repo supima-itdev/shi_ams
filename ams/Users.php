@@ -45,6 +45,8 @@
 	<link rel="stylesheet" href="css/dialog.css">
 	<link rel="stylesheet" href="css/font.css">
 	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/footer.css">
 
   	<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
   	<script type="text/javascript" src="js/jquery-ui.js"></script>
@@ -65,34 +67,46 @@
 
 	<div class="container">
     	<div class="row">
-      		<div class="tweleve column" style="margin-top: 15%">
+      		<div class="tweleve column">
 
-	            <h4>Users</h4>
+      			<div class="wrapper">
+					<header>
+						<?php include_once "header.php";?>
+					</header>
+					<article>
+						<h4>Users</h4>
 
-		        <br/>
+				        <br/>
 
-		        <div class="table-wrapper">
-					<div class="table-content" style="height: 340px !important">
-						<table>
-							<thead>
-								<tr>
-									<th>
-										<div class="col-header">Username</div>
-									</th>
-									<th>
-										<div class="col-header">Name</div>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php echo $oUsers->View_Users(); ?>
-							</tbody>  
-						</table>
-					</div>
-				</div> <!-- table-wrapper  -->
+				        <div class="table-wrapper">
+							<div class="table-content" style="height: 340px !important">
+								<table>
+									<thead>
+										<tr>
+											<th>
+												<div class="col-header">Username</div>
+											</th>
+											<th>
+												<div class="col-header">Name</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php echo $oUsers->View_Users(); ?>
+									</tbody>  
+								</table>
+							</div>
+						</div> <!-- table-wrapper  -->
 
-		        
-        		<span id="add-new-user" class="dialog-btn">Add User</span>
+		        		<span id="add-new-user" class="dialog-btn">Add User</span>
+
+					</article>
+					<footer>
+						<?php include_once "footer.php";?>
+					</footer>
+				</div> <!-- wrapper -->
+
+	            
 
       		</div> <!-- column -->
     	</div> <!-- row -->

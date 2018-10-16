@@ -45,6 +45,9 @@
   	<link rel="stylesheet" href="css/jquery-ui.css">
   	<link rel="stylesheet" href="css/table.css">
 	<link rel="stylesheet" href="css/dialog.css">
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/footer.css">
 
 
   <!-- JS
@@ -70,71 +73,85 @@
 	<div class="container">
 		
 		<div class="row">
-			<div class="twelve column" style="margin-top: 15%">
-				<h4>Menus and Modules</h4>
-				<br/>
+			<div class="twelve column">
+				<div class="wrapper">
+					<header>
+					<?php include_once "header.php";?>
+					</header>
+					<article>
+						<h4>Menus and Modules</h4>
+						<br/>
+
+						<div class="row">
+
+				      		<div class="six columns" >
+
+								<div class="table-wrapper">
+									<div class="table-content" style="height: 340px !important">
+
+										<table>
+											<thead>
+												<tr>
+													<th>
+														<div class="col-header">ID</div>
+													</th>
+													<th>
+														<div class="col-header">Menus</div>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<?php echo $oMenusModules->View_Menus(); ?>
+											</tbody>  
+										</table>
+
+									</div> <!-- table-content -->
+								</div> <!-- table-wrapper  -->
+
+								<span id="add-new-menu" class="dialog-btn">Add Menu</span>
+
+				      		</div> <!-- column -->
+
+				      		<div class="six columns" >
+				      			<div class="table-wrapper">
+									<div class="table-content" style="height: 340px !important">
+										<table>
+											<thead>
+												<tr>
+													<th>
+														<div class="col-header">ID</div>
+													</th>
+													<th>
+														<div class="col-header">Modules</div>
+													</th>
+													<th>
+														<div class="col-header">Path</div>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<?php echo $oMenusModules->View_Modules(); ?>
+											</tbody>  
+										</table>
+									</div>
+								</div> <!-- table-wrapper  -->
+								
+								<span id="add-new-module" class="dialog-btn">Add Module</span>
+
+				      		</div> <!-- column -->
+
+						</div> <!-- row -->
+
+					</article>
+					<footer>
+					<?php include_once "footer.php";?>
+					</footer>
+				</div> <!-- wrapper -->
+
 			</div>
 		</div>
 
-    	<div class="row">
 
-      		<div class="six columns" >
-
-				<div class="table-wrapper">
-					<div class="table-content" style="height: 340px !important">
-
-						<table>
-							<thead>
-								<tr>
-									<th>
-										<div class="col-header">ID</div>
-									</th>
-									<th>
-										<div class="col-header">Menus</div>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php echo $oMenusModules->View_Menus(); ?>
-							</tbody>  
-						</table>
-
-					</div> <!-- table-content -->
-				</div> <!-- table-wrapper  -->
-
-				<span id="add-new-menu" class="dialog-btn">Add Menu</span>
-
-      		</div> <!-- column -->
-
-      		<div class="six columns" >
-      			<div class="table-wrapper">
-					<div class="table-content" style="height: 340px !important">
-						<table>
-							<thead>
-								<tr>
-									<th>
-										<div class="col-header">ID</div>
-									</th>
-									<th>
-										<div class="col-header">Modules</div>
-									</th>
-									<th>
-										<div class="col-header">Path</div>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php echo $oMenusModules->View_Modules(); ?>
-							</tbody>  
-						</table>
-					</div>
-				</div> <!-- table-wrapper  -->
-				
-				<span id="add-new-module" class="dialog-btn">Add Module</span>
-
-      		</div> <!-- column -->
-
-		</div> <!-- row -->
 	</div> <!-- container -->
 
 	<div class="dialog-holder">
@@ -170,17 +187,23 @@
 		        <br/>
 
 				<div class="div-label">
-		          Module
+		          Name
 		        </div>
 		        <div class="div-input">
 		          <input type="text" id="txtModule">           
 		        </div>
 		        <div class="div-label">
-		          Module Path
+		          Module Name
 		        </div>
 		        <div class="div-input">
 		          <input type="text" id="txtModulePath">           
 		        </div>
+		        <div class="div-label">
+		          Menu
+		        </div>
+		        <div class="div-input">
+        			<?php $oMenusModules->element_name = "ddlMenu"; echo $oMenusModules->List_Menus();?>  
+    			</div>
 		        <div class="div-button">
 		          <input type="button" class="btnSubmit" id="btnSubmit_Module" value="Submit" style="color: #000;">
 		          <input type="button" class="btnClose" id="btnClose_Module" value="Close" style="color: #000;">

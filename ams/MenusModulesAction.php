@@ -20,8 +20,9 @@
 
 		$module 	= $connObj->{"Modules"};
 		$modulepath = $connObj->{"ModulesPath"};
-		
-		echo $oMenusModules->AddModules($module,$modulepath);		
+		$menu 		= $connObj->{"Menu"};
+
+		echo $oMenusModules->AddModules($module,$modulepath,$menu);		
 	}
 	
 

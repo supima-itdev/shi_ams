@@ -10,9 +10,6 @@ $(function(){
 	var ddlModule_val;
 	
 	
-
-
-
 	function Validate(){
 		
 		ddlMenu_val = Input_Validation(ddlMenu,'Enter Firstname');	
@@ -85,8 +82,8 @@ $(function(){
 		        url: "MenusConfigAction.php",
 		        data: {data:param} ,
 		        success: function (result){
-		        	console.log("success: "+ result);
-		        	
+		        	// console.log("success: "+ result);
+		        	$('#dialog-users-menus').dialog('close');
 		        },
 		        error: function (result){
 		            // console.log("error: "+ result);	

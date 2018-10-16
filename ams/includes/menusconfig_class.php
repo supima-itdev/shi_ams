@@ -45,8 +45,8 @@
 					$result.= "<td width='40%'>".$row['menu']."</td>";
 					$result.= "<td width='10%'>
 									<div class='action-icon'>
-                                  		<img src='images/printer_16x16.png' class='black'>
-                                		<span class='btnOpen'><img src='images/printer_red_16x16.png' class='red'></span>
+                                  		<img src='images/edit_16x16.png' class='black'>
+                                		<span class='btnOpen'><img src='images/edit_red_16x16.png' class='red'></span>
                                 	</div>
                                 </td>";
 

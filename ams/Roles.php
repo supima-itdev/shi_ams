@@ -45,6 +45,9 @@
   	<link rel="stylesheet" href="css/jquery-ui.css">
   	<link rel="stylesheet" href="css/table.css">
 	<link rel="stylesheet" href="css/dialog.css">
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/footer.css">
 
 
   <!-- JS
@@ -67,30 +70,44 @@
  
 	<div class="container">
     	<div class="row">
-      		<div class="tweleve column" style="margin-top: 15%">
-      			<h4>Roles</h4>
-		        <br/>
-				<div class="table-wrapper">
-					<div class="table-content" style="height: 340px !important">
-						<table>
-							<thead>
-								<tr>
-									<th>
-										<div class="col-header">Role ID</div>
-									</th>
-									<th>
-										<div class="col-header">Role</div>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php echo $oRoles->View_Roles(); ?>
-							</tbody>  
-						</table>
-					</div>
-				</div> <!-- table-wrapper  -->
+      		<div class="tweleve column">
+
+      			<div class="wrapper">
+					<header>
+						<?php include_once "header.php";?>
+					</header>
+					<article>
+
+						<h4>Roles</h4>
+				        <br/>
+						<div class="table-wrapper">
+							<div class="table-content" style="height: 340px !important">
+								<table>
+									<thead>
+										<tr>
+											<th>
+												<div class="col-header">Role ID</div>
+											</th>
+											<th>
+												<div class="col-header">Role</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php echo $oRoles->View_Roles(); ?>
+									</tbody>  
+								</table>
+							</div>
+						</div> <!-- table-wrapper  -->
 				
 				<span id="add-new-role" class="dialog-btn">Add Role</span>
+					</article>
+					<footer>
+						<?php include_once "footer.php";?>
+					</footer>
+				</div> <!-- wrapper -->
+
+      			
 				
       		</div>
 		</div>
