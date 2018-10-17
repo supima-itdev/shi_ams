@@ -24,3 +24,27 @@ h1, h2, h3, h4, h5, h6{
 	width: 50%;
 	display: inline-block;
 }
+
+.front{
+  display: block;
+}
+
+.front-effect {
+  display: none;
+}
+
+.div-action-icon{
+	position: relative;
+	left: 90%;
+	display: inline-block;
+	padding-right: 5px;
+}
+
+.div-action-icon:hover .front {
+  display: none;
+}
+
+.div-action-icon:hover .front-effect {
+  display: block;
+  cursor: pointer;
+}

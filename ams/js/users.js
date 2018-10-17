@@ -65,7 +65,6 @@ $(function(){
 	        }
 
 		});//ajax
-
 	} //ResetPassword
 
 	$('#btnGenerate').click(function(e){
@@ -117,9 +116,7 @@ $(function(){
 		new_password =  $.md5(users_name);
 
 		$('#dialog-notifier').dialog('open');
-
 	}); //btnEdit
-
 
 	$('#btnSubmit').click(function(e){
 		e.preventDefault();
@@ -150,6 +147,7 @@ $(function(){
 
 	            	if(result == 1){
 	            		Clear();
+	            		$('#dialog-users').dialog('close');
 	            	} 
 	            },
 	            error: function (result){
@@ -169,7 +167,6 @@ $(function(){
 		e.preventDefault();	
 		$('#dialog-users').dialog('close');
 	});	//btnClose
-
 
 	$( "#dialog-users" ).dialog({
 		dialogClass: 'no-close',

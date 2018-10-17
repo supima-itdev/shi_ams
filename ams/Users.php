@@ -98,7 +98,12 @@
 							</div>
 						</div> <!-- table-wrapper  -->
 
-		        		<span id="add-new-user" class="dialog-btn">Add User</span>
+						<br/>
+						<div class='div-action-icon'>
+                        	<img src='images/users_64x64.png' class='front'>
+                        	<span id="add-new-user"><img src='images/users_white_64x64.png' class='front-effect'></span>
+                        </div>
+		        		
 
 					</article>
 					<footer>

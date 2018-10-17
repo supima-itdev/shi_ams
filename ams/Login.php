@@ -50,7 +50,7 @@
         </div>
         
         <div>
-          <input type="button" class="btnSubmit" id="btnSubmit" value="Submit">
+          <input type="button" class="btnSubmit" id="btnSubmit" value="Login">
         </div>
 
         <span id="err-msg"></span>

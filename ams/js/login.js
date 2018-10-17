@@ -30,12 +30,9 @@ $(function(){
 	$('#btnSubmit').click(function(e){
 		e.preventDefault();
 
-		
-
 		stat_flag = Validate();
 
 		if(stat_flag == true){
-
 
 			var param = {
 					"Action":"CheckCredentials",
@@ -69,6 +66,12 @@ $(function(){
 			
 		} //if
 
+	}); //btnSubmit
+
+	$("#txtPassword").keydown(function(event){
+	    if(event.keyCode == 13){
+	        $("#btnSubmit").click();
+	    }
 	});
 
 });

@@ -22,7 +22,7 @@
 		function GetUserMenus($data){
 
 			$sql = "SELECT 
-						u.username,
+						DISTINCT (u.username) AS username,
 						CONCAT  (firstname, ', ', lastname) AS name,
 						menu	
 					FROM ams.users u
